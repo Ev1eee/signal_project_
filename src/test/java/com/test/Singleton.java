@@ -15,7 +15,6 @@ public class Singleton {
     HealthDataSimulator healthDataSimulator;
     DataStorage dataStorage;
 
-
     @BeforeEach
     public void init() {
         healthDataSimulator = new HealthDataSimulator();

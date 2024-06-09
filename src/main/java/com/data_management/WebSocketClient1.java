@@ -5,9 +5,7 @@ import org.java_websocket.server.WebSocketServer;
 
 import java.net.URI;
 
-/**
- * Client class
- */
+
 public class WebSocketClient1 extends WebSocketClient {
 
     DataStorage dataStorage; // Handles data

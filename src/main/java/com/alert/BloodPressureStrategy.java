@@ -6,11 +6,12 @@ import com.data_management.PatientRecord;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Blood pressure test
- */
 public class BloodPressureStrategy implements AlertStrategy{
     @Override
+    /**
+     * @param patient the patient whose records are being evaluated
+     * @return boolean
+     */
     public boolean checkAlert(Patient patient) {
 
         List<PatientRecord> patientRecords = patient.getPatientRecords();

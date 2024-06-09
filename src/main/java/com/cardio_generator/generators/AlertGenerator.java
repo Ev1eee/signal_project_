@@ -20,7 +20,7 @@ public class AlertGenerator implements PatientDataGenerator {
     }
 
     /**
-     * Determine whether a user's specific data is less than 0.9,
+     * Determine whether a user's specific data is less than 0.9
      * and then assign or modify the value accordingly
      * @param patientId the id of patient
      * @param outputStrategy the tool for output data

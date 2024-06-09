@@ -100,6 +100,11 @@ public class DataStorage {
         System.out.println("-------------------Data refreshed every 5 seconds--------------------");
 
     }
+
+    /**
+     * Retrieves the singleton instance
+     * @return the singleton instance
+     */
     public DataStorage getInstance(){
         if (single == null) {
             synchronized (DataStorage.class) {

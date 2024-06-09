@@ -34,8 +34,8 @@ public class WebSocketClientTest {
         webSocketClient1.is();
     }
 
-    /**
-     * Test whether the client starts up correctly.
+  /**
+     * Test whether the client starts up correctly
      */
     @Test
     public void testBeClient() throws IOException {

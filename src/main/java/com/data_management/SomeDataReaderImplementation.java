@@ -16,6 +16,12 @@ public class SomeDataReaderImplementation implements DataReader{
         this.File_path=filepath;
     }
     @Override
+
+    /**
+     * Read data
+     * @param dataStorage the storage where data will be stored
+     * @throws IOException if there is an error reading the data
+     */
     public void readData(DataStorage dataStorage) throws IOException {
         // Uncommented code is for reading from a file
         try {

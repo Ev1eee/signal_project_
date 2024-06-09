@@ -11,6 +11,9 @@ import com.data_management.PatientRecord;
 import java.util.List;
 
 public class DataStorageTest {
+    /**
+     * Test the addPatientData and getRecords methods
+     */
 
     @Test
     void testAddAndGetRecords() {

@@ -15,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class AlertGeneratorTest {
 
+    /**
+     * Test the evaluateData method
+     */
 
    @Test
     public void testEvaluateData_Test(){
@@ -75,7 +78,7 @@ public class AlertGeneratorTest {
        assertEquals(true,alertGenerator.Combined(new PatientRecord(1,90,"",1L),
                new PatientRecord(1,91,"",1L)));
 
-       alertGenerator.exigency(new PatientRecord(1,91,"",1L));
+       alertGenerator.emergency(new PatientRecord(1,91,"",1L));
 
        patientRecords=new ArrayList<>();
        patientRecords.add(new PatientRecord(1,90,"",1L));

@@ -125,8 +125,8 @@ public class AlertGenerator {
         alerts.add(alert);
     }
 
-    /**
-     * ECG
+    /**check ECG  values to determine if an alert should be triggered
+     * @param patientRecord
      * @return
      */
     private boolean ECG(PatientRecord patientRecord){
@@ -134,12 +134,11 @@ public class AlertGenerator {
             return true;
         }
 
-
         return false;
     }
 
     /**
-     * Blood_Pressure
+     * check BloodPressure values to determine if an alert should be triggered
      * @param patientRecords SystolicPressure
      * @param patientRecords1 DiastolicPressure
      * @return
@@ -185,7 +184,8 @@ public class AlertGenerator {
     }
 
     /**
-     * Blood_Saturation
+     * check Blood_Saturation values to determine if an alert should be triggered
+     * @param patientRecord
      * @return
      */
     public boolean Blood_Saturation(PatientRecord patientRecord){
@@ -213,12 +213,18 @@ public class AlertGenerator {
 
     /**
      * A Triggered Alert
+     *  @param patientRecord
      */
-    public void exigency(PatientRecord patientRecord){
+    public void emergency(PatientRecord patientRecord){
 
         triggerAlert(new Alert(patientRecord.getPatientId()+"","Artificial",System.currentTimeMillis()));
     }
 
+    /**
+     * Gets the list of alerts that have been triggered
+     *
+     * @return the list of triggered alerts
+     */
     public ArrayList<Alert> getAlerts() {
         return alerts;
     }

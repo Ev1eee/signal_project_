@@ -4,6 +4,9 @@ import com.cardio_generator.HealthDataSimulator;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+/**
+ * FileTest
+ */
 
 public class FileTest {
     @Test

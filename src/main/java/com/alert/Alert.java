@@ -33,15 +33,24 @@ public class Alert {
         return type;
     }
 
+    /**
+     * Manually copies an Alert object.
+     *
+     * @return A new Alert object that is a copy of the current instance.
+     */
 
-
-     //  manually copy an Alert object
      public Alert copy() {
          Alert copy = new Alert(this.patientId, this.condition, this.timestamp);
          copy.setType(this.type);
          return copy;
      }
 
+    /**
+     * Creates a repeated alert by copying the given alert.
+     *
+     * @param alert The alert object to be copied
+     * @return A new Alert object that is a copy of the provided alert
+     */
     public Alert RepeatedAlertDecorator(Alert alert) {
         return alert.copy();
     }

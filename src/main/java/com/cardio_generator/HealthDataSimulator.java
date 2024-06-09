@@ -27,6 +27,11 @@ public class HealthDataSimulator {
     private static final Random random = new Random();
     private static HealthDataSimulator healthDataSimulator;
 
+    /**
+     * start the healthdata simulator
+     * @param args command line arguments
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
 //        args=new String[2];
@@ -48,6 +53,11 @@ public class HealthDataSimulator {
         healthDataSimulator=this;
 
     }
+    /**
+     * Parsearguments
+     * @param args
+     * @throws IOException
+     */
 
     private static void parseArguments(String[] args) throws IOException {
         for (int i = 0; i < args.length; i++) {

@@ -19,11 +19,12 @@ public class PatientTest {
     }
 
     @Test
+    /**
+     * Test the addRecord method
+     */
     void testGetRecords() {
         DataReader dataReader=new SomeDataReaderImplementation("src/main/java/bin/cc.txt/Saturation.txt");
         DataStorage storage = new DataStorage();
-
-
 
         try {
             dataReader.readData(storage);
