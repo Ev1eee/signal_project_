@@ -1,5 +1,8 @@
 package com.alert;
 
+/**
+ *  factory pattern to create alerts
+ */
 public class BloodPressureAlertFactory extends AlertFactory{
     @Override
     /**

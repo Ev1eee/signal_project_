@@ -1,5 +1,10 @@
 package com.alert;
 
+
+/**
+ *  ECGAlertFactory
+ */
+
 public class ECGAlertFactory extends AlertFactory{
     /**
      * Creates an ECG alert with the specified patient ID, condition, and timestamp.

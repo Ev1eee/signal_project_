@@ -5,6 +5,9 @@ import org.java_websocket.server.WebSocketServer;
 
 import java.net.URI;
 
+/**
+ *  reads data from the server
+ */
 
 public class WebSocketClient1 extends WebSocketClient {
 

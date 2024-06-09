@@ -2,6 +2,10 @@ package com.alert;
 
 import com.data_management.Patient;
 
+/**
+ * Check whether the  OxygenSaturation triggers an alarm
+ */
+
 
 public class OxygenSaturationStrategy implements AlertStrategy{
     @Override

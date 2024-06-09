@@ -1,6 +1,8 @@
 package com.alert;
 
-
+/*
+ * RepeatedAlertDecorator
+ */
     public class RepeatedAlertDecorator implements AlertDecorator {
         Alert alert;
 

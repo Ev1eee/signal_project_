@@ -6,6 +6,10 @@ import com.data_management.PatientRecord;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *to check the blood pressure of the patient whether triggers an alarm
+ */
+
 public class BloodPressureStrategy implements AlertStrategy{
     @Override
     /**

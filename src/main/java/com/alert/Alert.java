@@ -1,6 +1,8 @@
 package com.alert;
 
-// Represents an alert
+/**
+ *  represents an alert
+ */
 public class Alert {
     private String patientId;
     private String condition;

@@ -2,6 +2,12 @@ package com.alert;
 
 import com.data_management.Patient;
 
+/**
+ * S
+ * Check whether the  HeartRate triggers an alarm
+ *
+ */
+
 public class HeartRateStrategy implements AlertStrategy{
     @Override
     /**

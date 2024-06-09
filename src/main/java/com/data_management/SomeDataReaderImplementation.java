@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+/**
+ *   Uncommented code is for reading from a file
+ */
+
 public class SomeDataReaderImplementation implements DataReader{
 
     private String File_path;
@@ -23,7 +27,6 @@ public class SomeDataReaderImplementation implements DataReader{
      * @throws IOException if there is an error reading the data
      */
     public void readData(DataStorage dataStorage) throws IOException {
-        // Uncommented code is for reading from a file
         try {
             BufferedReader in = new BufferedReader(new FileReader(File_path));
             String str;
