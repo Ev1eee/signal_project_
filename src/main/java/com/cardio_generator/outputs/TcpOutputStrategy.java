@@ -16,7 +16,6 @@ public class TcpOutputStrategy implements OutputStrategy {
         try {
             serverSocket = new ServerSocket(port);
             System.out.println("TCP Server started on port " + port);
-
             // Accept clients in a new thread to not block the main thread
             Executors.newSingleThreadExecutor().submit(() -> {
                 try {
@@ -34,9 +33,9 @@ public class TcpOutputStrategy implements OutputStrategy {
 
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
-        if (out != null) {
-            String message = String.format("%d,%d,%s,%s", patientId, timestamp, label, data);
-            out.println(message);
-        }
+
+        String message = String.format("%d,%d,%s,%s", patientId, timestamp, label, data);
+        System.out.println(message);
+
     }
 }

@@ -13,6 +13,7 @@ public class Patient {
     private int patientId;
     private List<PatientRecord> patientRecords;
 
+
     /**
      * Constructs a new Patient with a specified ID.
      * Initializes an empty list of patient records.
@@ -53,5 +54,25 @@ public class Patient {
      */
     public List<PatientRecord> getRecords(long startTime, long endTime) {
         // TODO Implement and test this method
+
+        ArrayList<PatientRecord> patientRecords=new ArrayList<>();
+
+        for (int i=0;i<this.patientRecords.size();i++){
+            PatientRecord patientRecord = this.patientRecords.get(i);
+            if(startTime<=patientRecord.getTimestamp()&&endTime>=patientRecord.getTimestamp()){
+               patientRecords.add(patientRecord);
+            }
+        }
+
+        return patientRecords;
+    }
+
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public List<PatientRecord> getPatientRecords() {
+        return patientRecords;
     }
 }

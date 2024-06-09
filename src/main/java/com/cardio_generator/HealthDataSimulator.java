@@ -1,5 +1,6 @@
 package com.cardio_generator;
 
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -10,20 +11,13 @@ import com.cardio_generator.generators.BloodPressureDataGenerator;
 import com.cardio_generator.generators.BloodSaturationDataGenerator;
 import com.cardio_generator.generators.BloodLevelsDataGenerator;
 import com.cardio_generator.generators.ECGDataGenerator;
-import com.cardio_generator.outputs.ConsoleOutputStrategy;
-import com.cardio_generator.outputs.fileOutputStrategy;
-import com.cardio_generator.outputs.OutputStrategy;
-import com.cardio_generator.outputs.TcpOutputStrategy;
-import com.cardio_generator.outputs.WebSocketOutputStrategy;
+import com.cardio_generator.outputs.*;
+import com.data_management.DataStorage;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 public class HealthDataSimulator {
 
@@ -31,9 +25,14 @@ public class HealthDataSimulator {
     private static ScheduledExecutorService scheduler;
     private static OutputStrategy outputStrategy = new ConsoleOutputStrategy(); // Default output strategy
     private static final Random random = new Random();
+    private static HealthDataSimulator healthDataSimulator;
 
     public static void main(String[] args) throws IOException {
 
+//        args=new String[2];
+//        args[0]="--output";
+//        args[1]="file:/Users/evie/Downloads/signal_project/src/main/java/bin/cc.txt";
+      //  args[1]="--outputfile:<src/main/java/bin>";
         parseArguments(args);
 
         scheduler = Executors.newScheduledThreadPool(patientCount * 4);
@@ -44,12 +43,18 @@ public class HealthDataSimulator {
         scheduleTasksForPatients(patientIds);
     }
 
+    public HealthDataSimulator(){
+        scheduler = Executors.newScheduledThreadPool(patientCount * 4);
+        healthDataSimulator=this;
+
+    }
+
     private static void parseArguments(String[] args) throws IOException {
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
                 case "-h":
                     printHelp();
-                    System.exit(0);
+                    //System.exit(-1);
                     break;
                 case "--patient-count":
                     if (i + 1 < args.length) {
@@ -72,7 +77,7 @@ public class HealthDataSimulator {
                             if (!Files.exists(outputPath)) {
                                 Files.createDirectories(outputPath);
                             }
-                            outputStrategy = new fileOutputStrategy(baseDirectory);
+                            outputStrategy = new FileOutputStrategy(baseDirectory);
                         } else if (outputArg.startsWith("websocket:")) {
                             try {
                                 int port = Integer.parseInt(outputArg.substring(10));
@@ -100,7 +105,7 @@ public class HealthDataSimulator {
                 default:
                     System.err.println("Unknown option '" + args[i] + "'");
                     printHelp();
-                    System.exit(1);
+                    //System.exit(-1);
             }
         }
     }
@@ -149,4 +154,16 @@ public class HealthDataSimulator {
     private static void scheduleTask(Runnable task, long period, TimeUnit timeUnit) {
         scheduler.scheduleAtFixedRate(task, random.nextInt(5), period, timeUnit);
     }
+    private static HealthDataSimulator single=null;
+    public  HealthDataSimulator getInstance(){
+        if (single == null) {
+            synchronized (HealthDataSimulator.class) {
+                if (single == null) {
+                    single = new HealthDataSimulator();
+                }
+            }
+        }
+        return single;
+    }
+
 }

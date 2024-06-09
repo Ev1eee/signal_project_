@@ -28,7 +28,7 @@ public class PatientRecord {
     public PatientRecord(int patientId, double measurementValue, String recordType, long timestamp) {
         this.patientId = patientId;
         this.measurementValue = measurementValue;
-        this.recordType = recordType;
+        this.recordType = recordType.trim();
         this.timestamp = timestamp;
     }
 

@@ -63,3 +63,32 @@ java -jar target/cardio_generator-1.0-SNAPSHOT.jar --patient-count 100 --output 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Authors
+I6325595 JINGYI LIU 
+
+## UML Diagrams
+For this project, I have created 7 UML diagrams, which are:
+
+	•	Alert Generation System
+	•	Data Storage System
+	•	Patient Identification System
+	•	Data Access Layer
+	•	State Diagrams Project
+	•	State Diagram Alert Generation System
+    •	UML_cardio_generator
+
+
+Link:https://github.com/Ev1eee/signal_project/tree/master/uml_models
+
+## TestResult
+In this project, I have created 8 test cases, which are:
+
+    •	AlertGenerationTest
+    •	DataStorageTest
+    •	PatientIdentificationTest
+    •	ConsoleTest
+    •	FileTest
+    •	TcpTest
+    •	WebSocketClientTest
+    •	OtherTest
